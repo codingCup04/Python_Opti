@@ -69,12 +69,15 @@ def pycaptcha():
         print(f"Pressed {pressed} times.")
     def closewin():
         print("Verifications window closed.")
+        window.destroy
         closed = True
     window = tk.Tk()
     window.title("Test")
     window.wm_iconbitmap('appicon.ico')
     window.geometry("500x200")
     button = tk.Button(window, activebackground="#000000", activeforeground="#ffffff", text="Click here", command=printout)
+    clbtn = tk.Button(window, activebackground="#000000", activeforeground="#ffffff", text="Close", command=closewin)
+    clbtn.place(x=200, y=10)
     button.place(x=100, y=10)
     info1 = tk.Label(text="pyCaptcha")
     info1.place(x=10, y=10)
