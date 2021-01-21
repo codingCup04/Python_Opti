@@ -59,6 +59,7 @@ def pi():
     return math.pi
 def pycaptcha():
     requ = random.randrange(0, 11)
+    global pressed
     pressed = 0
     closed = False
     print(f"Click the button {requ} times.")
