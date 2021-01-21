@@ -4,6 +4,7 @@ Do not delete this.
 """
 import time, random, math
 from pynput.keyboard import Key, Controller
+import tkinter as tk
 keyb = Controller()
 a = 0
 b = 0
@@ -57,34 +58,32 @@ def add(val1, val2):
 def pi():
     return math.pi
 def pycaptcha():
-    import tkinter as tk
-import random
-requ = random.randrange(0, 11)
-pressed = 0
-closed = False
-print(f"Click the button {requ} times.")
-def printout():
-    global pressed
-    pressed += 1
-    print(f"Pressed {pressed} times.")
-def closewin():
-    print("Verifications window closed.")
-    closed = True
-window = tk.Tk()
-window.title("Test")
-window.wm_iconbitmap('appicon.ico')
-window.geometry("500x200")
-button = tk.Button(window, activebackground="#000000", activeforeground="#ffffff", text="Click here", command=printout)
-button.place(x=100, y=10)
-info1 = tk.Label(text="pyCaptcha")
-info1.place(x=10, y=10)
-window.mainloop()
-if requ == pressed:
-    print("Verification complete.")
-    return True
-else:
-    print("Verification failed.")
-    return False
+    requ = random.randrange(0, 11)
+    pressed = 0
+    closed = False
+    print(f"Click the button {requ} times.")
+    def printout():
+        global pressed
+        pressed += 1
+        print(f"Pressed {pressed} times.")
+    def closewin():
+        print("Verifications window closed.")
+        closed = True
+    window = tk.Tk()
+    window.title("Test")
+    window.wm_iconbitmap('appicon.ico')
+    window.geometry("500x200")
+    button = tk.Button(window, activebackground="#000000", activeforeground="#ffffff", text="Click here", command=printout)
+    button.place(x=100, y=10)
+    info1 = tk.Label(text="pyCaptcha")
+    info1.place(x=10, y=10)
+    window.mainloop()
+    if requ == pressed:
+        print("Verification complete.")
+        return True
+    else:
+        print("Verification failed.")
+        return False
 
 class printOut:
     def __init__():
