@@ -69,7 +69,7 @@ def pycaptcha():
         print(f"Pressed {pressed} times.")
     def closewin():
         print("Verifications window closed.")
-        window.destroy
+        window.destroy()
         closed = True
     window = tk.Tk()
     window.title("Test")
